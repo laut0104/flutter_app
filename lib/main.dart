@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/book_list_page.dart';
 import 'package:flutter_app/main_model.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -31,7 +35,10 @@ class MyApp extends StatelessWidget {
                       RaisedButton(
                         child: Text('ボタン'),
                         onPressed: (){
-                          model.changeText();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BookList()),
+                          );
                         },
                       ),
                     ],
