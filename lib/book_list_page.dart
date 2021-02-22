@@ -15,8 +15,14 @@ class BookListPage extends StatelessWidget {
         body: Consumer<BookListModel>(
             builder: (context, model, child){
               final books = model.books;
+              final listTiles = books.map(
+                      (book) => ListTile(
+                        title: Text(book.title),
+                      ),
+              )
+                  .toList();
+              return ListView(children: listTiles,);
 
-              return ListView();
             }
         ),
       ),
