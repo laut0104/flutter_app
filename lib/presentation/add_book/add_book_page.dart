@@ -27,7 +27,6 @@ class AddBookPage extends StatelessWidget {
                       onPressed: ()async{
                         //todo:firestoreにデータ追加
 
-
                         try{
                           await model.addBookToFirebase();
                           showDialog(
@@ -37,10 +36,10 @@ class AddBookPage extends StatelessWidget {
                                 title: Text('保存しました'),
                                 actions: <Widget>[
                                   FlatButton(
-                                    onPressed: (){
-                                      Navigator.of(context).pop();
-                                    },
                                     child: Text('OK'),
+                                    onPressed: (){
+                                      Navigator.pop(context);
+                                    },
                                   ),
                                 ],
                               );
@@ -55,7 +54,7 @@ class AddBookPage extends StatelessWidget {
                                 actions: <Widget>[
                                   FlatButton(
                                     onPressed: (){
-                                      Navigator.of(context).pop();
+                                      Navigator.pop(context);
                                     },
                                     child: Text('OK'),
                                   ),
