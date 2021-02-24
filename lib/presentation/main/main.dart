@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/book_list_page.dart';
-import 'package:flutter_app/main_model.dart';
+import '../book_list/book_list_page.dart';
+import 'main_model.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 
